@@ -1,0 +1,273 @@
+.routing .container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: min-content 10vmin 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: min-content 10vmin 1fr 1fr 1fr 1fr 1fr;
+    gap: 0.25rem;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". . label_in_category label_in_category label_in_category label_in_category label_in_category label_in_category label_in_category label_in_category"
+        ". . label_in_microphone label_in_chat label_in_music label_in_game label_in_console label_in_lineIn label_in_system label_in_sampler"
+        "label_out_category label_out_headphones button_microphone_headphones button_chat_headphones button_music_headphones button_game_headphones button_console_headphones button_line_headphones button_system_headphones button_sample_headphones"
+        "label_out_category label_out_stream button_microphone_stream button_chat_stream button_music_stream button_game_stream button_console_stream button_line_stream button_system_stream button_sample_stream"
+        "label_out_category label_out_chat button_microphone_chat . button_music_chat button_game_chat button_console_chat button_line_chat button_system_chat button_sample_chat"
+        "label_out_category label_out_sampler button_microphone_sampler button_chat_sampler button_music_sampler button_game_sampler button_console_sampler button_line_sampler button_system_sampler button_sample_sampler"
+        "label_out_category label_out_lineOut button_microphone_line button_chat_line button_music_line button_game_line button_console_line button_line_line button_system_line button_sample_line";
+}
+
+/* Labels */
+
+.label_out_category {
+    grid-area: label_out_category;
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+    text-align: center;
+}
+
+.label_in_category {
+    grid-area: label_in_category;
+    text-align: center;
+    border-top-left-radius: 1rem;
+}
+
+.label_out_category,
+.label_in_category {
+    padding: 0.5rem;
+    display: grid;
+    place-items: center;
+    background-color: #202020;
+}
+
+.label {
+    padding: 0.5rem;
+    display: grid;
+    place-items: center;
+    background-color: #202020;
+}
+
+.label svg {
+    min-width: 1rem;
+    min-height: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.label_out_headphones {
+    grid-area: label_out_headphones;
+}
+
+.label_out_stream {
+    grid-area: label_out_stream;
+}
+
+.label_out_chat {
+    grid-area: label_out_chat;
+}
+
+.label_out_sampler {
+    grid-area: label_out_sampler;
+}
+
+.label_out_lineOut {
+    grid-area: label_out_lineOut;
+}
+
+.label_in_microphone {
+    grid-area: label_in_microphone;
+}
+
+.label_in_chat {
+    grid-area: label_in_chat;
+}
+
+.label_in_music {
+    grid-area: label_in_music;
+}
+
+.label_in_game {
+    grid-area: label_in_game;
+}
+
+.label_in_console {
+    grid-area: label_in_console;
+}
+
+.label_in_lineIn {
+    grid-area: label_in_lineIn;
+}
+
+.label_in_system {
+    grid-area: label_in_system;
+}
+
+.label_in_sampler {
+    grid-area: label_in_sampler;
+}
+
+/* Buttons */
+
+.button_microphone_headphones {
+    grid-area: button_microphone_headphones;
+}
+
+.button_microphone_stream {
+    grid-area: button_microphone_stream;
+}
+
+.button_microphone_chat {
+    grid-area: button_microphone_chat;
+}
+
+.button_microphone_sampler {
+    grid-area: button_microphone_sampler;
+}
+
+.button_microphone_line {
+    grid-area: button_microphone_line;
+}
+
+.button_chat_headphones {
+    grid-area: button_chat_headphones;
+}
+
+.button_chat_stream {
+    grid-area: button_chat_stream;
+}
+
+.button_chat_sampler {
+    grid-area: button_chat_sampler;
+}
+
+.button_chat_line {
+    grid-area: button_chat_line;
+}
+
+.button_music_stream {
+    grid-area: button_music_stream;
+}
+
+.button_music_headphones {
+    grid-area: button_music_headphones;
+}
+
+.button_music_chat {
+    grid-area: button_music_chat;
+}
+
+.button_music_sampler {
+    grid-area: button_music_sampler;
+}
+
+.button_music_line {
+    grid-area: button_music_line;
+}
+
+.button_game_headphones {
+    grid-area: button_game_headphones;
+}
+
+.button_game_stream {
+    grid-area: button_game_stream;
+}
+
+.button_game_chat {
+    grid-area: button_game_chat;
+}
+
+.button_game_sampler {
+    grid-area: button_game_sampler;
+}
+
+.button_game_line {
+    grid-area: button_game_line;
+}
+
+.button_console_headphones {
+    grid-area: button_console_headphones;
+}
+
+.button_console_stream {
+    grid-area: button_console_stream;
+}
+
+.button_console_chat {
+    grid-area: button_console_chat;
+}
+
+.button_console_sampler {
+    grid-area: button_console_sampler;
+}
+
+.button_console_line {
+    grid-area: button_console_line;
+}
+
+.button_line_headphones {
+    grid-area: button_line_headphones;
+}
+
+.button_line_stream {
+    grid-area: button_line_stream;
+}
+
+.button_line_chat {
+    grid-area: button_line_chat;
+}
+
+.button_line_sampler {
+    grid-area: button_line_sampler;
+}
+
+.button_line_line {
+    grid-area: button_line_line;
+}
+
+.button_system_headphones {
+    grid-area: button_system_headphones;
+}
+
+.button_system_stream {
+    grid-area: button_system_stream;
+}
+
+.button_system_chat {
+    grid-area: button_system_chat;
+}
+
+.button_system_sampler {
+    grid-area: button_system_sampler;
+}
+
+.button_system_line {
+    grid-area: button_system_line;
+}
+
+.button_sample_headphones {
+    grid-area: button_sample_headphones;
+}
+
+.button_sample_stream {
+    grid-area: button_sample_stream;
+}
+
+.button_sample_chat {
+    grid-area: button_sample_chat;
+}
+
+.button_sample_sampler {
+    grid-area: button_sample_sampler;
+}
+
+.button_sample_line {
+    grid-area: button_sample_line;
+}
+
+/* Buttons */
+
+.button {
+    padding: 0.5rem;
+    display: grid;
+    place-items: center;
+    background-color: red;
+}

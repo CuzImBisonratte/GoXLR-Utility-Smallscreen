@@ -1,0 +1,43 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    gap: 1rem;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "nav"
+        "main";
+    height: 100%;
+    margin: 0px;
+    background-color: #252927;
+    color: #ffffff;
+}
+
+nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    margin: 0px 1rem;
+    padding: 0.5rem 0px;
+    border: 1px solid #ffffff;
+    border-top: 0px;
+    border-radius: 0px 0px 0.5rem 0.5rem;
+    height: 1.75rem;
+}
+
+main {
+    grid-area: main;
+}
+
+section {
+    height: 100%;
+}

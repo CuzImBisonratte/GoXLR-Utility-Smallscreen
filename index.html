@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functional - GoXLR</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="routing.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="navelement">Microphone</a>
+      <a class="navelement">Mixer</a>
+      <a class="navelement">Effekte</a>
+      <a class="navelement">Routing</a>
+    </nav>
+    <main class="main">
+      <section class="routing" id="routing">
+        <div class="container">
+          <div class="label_out_category">Outputs</div>
+          <div class="label_in_category">Inputs</div>
+          <div class="label label_out label_out_headphones"></div>
+          <div class="label label_out label_out_stream"></div>
+          <div class="label label_out label_out_chat"></div>
+          <div class="label label_out label_out_sampler"></div>
+          <div class="label label_out label_out_lineOut"></div>
+          <div class="label label_in label_in_microphone"></div>
+          <div class="label label_in label_in_chat"></div>
+          <div class="label label_in label_in_music"></div>
+          <div class="label label_in label_in_game"></div>
+          <div class="label label_in label_in_console"></div>
+          <div class="label label_in label_in_lineIn"></div>
+          <div class="label label_in label_in_system"></div>
+          <div class="label label_in label_in_sampler"></div>
+          <div class="button button_microphone_headphones"></div>
+          <div class="button button_microphone_stream"></div>
+          <div class="button button_microphone_chat"></div>
+          <div class="button button_microphone_sampler"></div>
+          <div class="button button_microphone_line"></div>
+          <div class="button button_chat_headphones"></div>
+          <div class="button button_chat_stream"></div>
+          <div class="button button_chat_sampler"></div>
+          <div class="button button_chat_line"></div>
+          <div class="button button_music_stream"></div>
+          <div class="button button_music_headphones"></div>
+          <div class="button button_music_chat"></div>
+          <div class="button button_music_sampler"></div>
+          <div class="button button_music_line"></div>
+          <div class="button button_game_headphones"></div>
+          <div class="button button_game_stream"></div>
+          <div class="button button_game_chat"></div>
+          <div class="button button_game_sampler"></div>
+          <div class="button button_game_line"></div>
+          <div class="button button_console_headphones"></div>
+          <div class="button button_console_stream"></div>
+          <div class="button button_console_chat"></div>
+          <div class="button button_console_sampler"></div>
+          <div class="button button_console_line"></div>
+          <div class="button button_line_headphones"></div>
+          <div class="button button_line_stream"></div>
+          <div class="button button_line_chat"></div>
+          <div class="button button_line_sampler"></div>
+          <div class="button button_line_line"></div>
+          <div class="button button_system_headphones"></div>
+          <div class="button button_system_stream"></div>
+          <div class="button button_system_chat"></div>
+          <div class="button button_system_sampler"></div>
+          <div class="button button_system_line"></div>
+          <div class="button button_sample_headphones"></div>
+          <div class="button button_sample_stream"></div>
+          <div class="button button_sample_chat"></div>
+          <div class="button button_sample_sampler"></div>
+          <div class="button button_sample_line"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script>
+    //
+    // Routing
+    //
+    // Labels
+    const labels = document.querySelectorAll(".label");
+    labels.forEach((label) => {
+      // Load image from /img/svgs/*.svg as in label_out_*.svg
+      const iconname = label.classList[2]
+        .replace("label_out_", "")
+        .replace("label_in_", "");
+      const iconpath = `img/svgs/${iconname}.svg`;
+      fetch(iconpath)
+        .then((response) => response.text())
+        .then((icondata) => {
+          label.innerHTML = icondata;
+        })
+        .catch((error) => {
+          console.error("Error fetching icon:", error);
+        });
+    });
+    // Buttons
+    const buttons = document.querySelectorAll(".button");
+    function setButton(input, output, state) {
+      const button = document.getElementsByClassName(
+        `button_${input}_${output}`
+      )[0];
+      console.log(button);
+      if (state) {
+        button.style.backgroundColor = "#00ff00";
+      } else {
+        button.style.backgroundColor = "#ff0000";
+      }
+    }
+    function toggleButton(input, output) {
+      const button = document.getElementsByClassName(
+        `button_${input}_${output}`
+      )[0];
+      if (button.style.backgroundColor === "rgb(0, 255, 0)") {
+        button.style.backgroundColor = "#ff0000";
+      } else {
+        button.style.backgroundColor = "#00ff00";
+      }
+    }
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const input = button.classList[1].replace("button_", "").split("_")[0];
+        const output = button.classList[1].replace("button_", "").split("_")[1];
+        toggleButton(input, output);
+      });
+    });
+  </script>
+</html>
